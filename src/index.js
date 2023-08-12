@@ -11,8 +11,7 @@ function attemptResolve(scriptPath) {
   }
 }
 
-const [executor, ignoredBin, script, ...args] = process.argv;
-console.log(executor, ignoredBin, script, args);
+const [executor, _ignoredBin, script, ...args] = process.argv;
 const relativeScriptPath = path.join(__dirname, "./scripts", script);
 const scriptPath = attemptResolve(relativeScriptPath);
 

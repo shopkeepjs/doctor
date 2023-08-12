@@ -11,7 +11,6 @@ function resolveBin(modName, { executable = modName } = {}) {
   const pkgPath = require.resolve(`${modName}/package.json`);
   const pkgDir = path.dirname(pkgPath);
   const { bin } = require(pkgPath);
-  console.log("BIN", pkgDir);
   if (typeof bin === "string") {
     return path.join(pkgDir, bin);
   }
